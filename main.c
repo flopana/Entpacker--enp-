@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "validate.c"
-#include "view_top_level.c"
+#include "view_files_in_archive.c"
 
 int main(int argc, char **argv)
 {
@@ -24,7 +24,7 @@ int main(int argc, char **argv)
         } else if(status == 2){
             return 0;
         } else if(status == 3){
-            if(view_top_level_dir == 1){
+            if(view_files_in_archive == 1){
                 view_top_level(argv[i]);
             }
         }

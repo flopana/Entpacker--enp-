@@ -1,14 +1,16 @@
 #include "string.h"
+#include "stdio.h"
 /*
- * Check if s1 is a suffix of s2
- * https://www.geeksforgeeks.org/check-if-a-string-is-suffix-of-another/
+ * Check if suffix is a suffix of str
+ * https://stackoverflow.com/questions/744766/how-to-compare-ends-of-strings-in-c
  */
-int is_suffix(char* s1, char* s2){
-    int n1 = strlen(s1), n2 = strlen(s2);
-    if (n1 > n2)
-        return 1;
-    for (int i=0; i<n1; i++)
-        if (s1[n1 - i - 1] != s2[n2 - i - 1])
-            return 1;
-    return 0;
+int is_suffix(const char *str, const char *suffix)
+{
+    if (!str || !suffix)
+        return 0;
+    size_t lenstr = strlen(str);
+    size_t lensuffix = strlen(suffix);
+    if (lensuffix >  lenstr)
+        return 0;
+    return strncmp(str + lenstr - lensuffix, suffix, lensuffix) == 0;
 }
