@@ -24,7 +24,11 @@ int main(int argc, char **argv)
         } else if(status == 2){
             return 0;
         } else if(status == 3){
-
+            if(view_top_level_dir == 1){
+                view_top_level(argv[i]);
+            }
         }
     }
+
+    return 0;
 }
