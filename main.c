@@ -1,10 +1,19 @@
 #include <stdio.h>
 #include "validate.c"
+#include "view_top_level.c"
 
 int main(int argc, char **argv)
 {
     /*
-     * Validate arguments
+     * Check whether user specified anything
+     */
+    if(argc < 2){
+        print_help();
+        return 0;
+    }
+
+    /*
+     * Validate arguments and start functions accordingly
      */
     for (int i = 1; i < argc; ++i)
     {
